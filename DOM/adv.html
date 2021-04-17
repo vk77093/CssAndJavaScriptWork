@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Advance JS</title>
+<link rel="stylesheet" href="adv.css">
+    </head>
+    <body>
+        <div class="mainSec">
+            <h4>The Example of Event Bubbling</h4>
+            <div id="outer">
+                <div id="inner">     
+                </div>
+            </div>
+            <br>
+            <h4>The Example of Event Capturing</h4>
+            <div id="outer2">
+                <div id="inner2">
+                </div>
+            </div>
+        </div>
+        <div class="containerXml">
+
+        </div>
+        <script src="../adv.js"></script>
+        <script>
+            //calling the XML Request
+            let conta=document.querySelector('#containerXml');
+
+            const request=new XMLHttpRequest();
+            request.open('GET','https://restcountries.eu/rest/v2/name/nepal');
+            request.send();
+            request.addEventListener('load',function(){
+                let dataGet=this.responseText;
+                console.log(dataGet);
+            })
+        </script>
+    </body>
+</html>

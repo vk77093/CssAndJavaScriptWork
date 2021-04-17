@@ -1,0 +1,80 @@
+*{
+margin-top: 15px;
+}
+body{
+    background-color: aqua;
+}
+.mainSec{
+    text-align: center;
+}
+.text{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    padding-top: 50px;
+}
+.change{
+    border: chocolate 4px solid;
+    color: red;
+    cursor: crosshair;
+    border-radius: 2px;
+}
+
+/* Events.html Css */
+.events{
+    padding: 5px;
+    text-align: center;
+}
+.buttonType{
+    border-style: solid 2px red;
+    color: grey;
+    font-size: large;
+    border-spacing: 2px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Mouse Events Work*/
+.mouseEvents{
+    text-align: center;
+    padding: 5px;
+}
+.mytext{
+    color: black;
+    font-size: medium;
+}
+.box{
+    text-align: center;
+background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+/* keywords Events */
+.boxes{
+    width: 300px;
+    padding: 40px;
+    margin: 10px;
+    border:10px solid red;
+}
+#keytext{
+    text-align: center;
+font-size: xx-large;
+}
+
+/* input events  */
+.my-form{
+    padding: 5px;
+    text-align: center;
+    font-size: xx-large;
+}
+/* Time Based Events in JS */
+.timeBased{
+    padding: 5px;
+    text-align: center;
+}
+#timeText#resultTime{
+font-size: xx-large;
+color: brown;
+}
+

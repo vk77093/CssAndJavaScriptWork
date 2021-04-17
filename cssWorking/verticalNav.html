@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vertical Nav </title>
+<style>
+ul {list-style-type: none;
+    margin: 5px;
+    padding:5px;
+    width:200px;
+    background-color: thistle;
+    border:1px solid red
+}
+li {
+    text-align:center;
+    border-bottom: 1px solid #555;
+}
+li a{
+    display:block;
+   
+    /* //background-color:grey; */
+    padding: 10px 12px;
+    text-decoration: none;
+    
+}
+li a:hover:not(.active){
+    background-color: green;
+    color: white;
+}
+li a.active{
+    background-color:orange;
+    color:white;
+}
+</style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li><a href="" class="active">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Test</a></li>
+            <li><a href="">Test 2</a></li>
+
+        </ul>
+        </body>
+</html>

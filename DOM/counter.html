@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <title>Auto Counter</title>
+  </head>
+  <body>
+    <main>
+        <div class="container py-4">
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5 text-center">
+                  <h3 class="display-7 fw-bold text-center mb-4">OUR COUNTER WITH AUTO Increment</h3>
+                 <div class="row text-center">
+                     <div class="col-sm-4 mt-2">
+                        <i class="fas fa-coffee fa-3x"></i>
+                        <h4 class="font-weight-bold counter" data-target="4000" ></h4>
+                        <p class="fw-bold">Project Completed</p>
+                     </div>
+                     <div class="col-sm-4 mt-2">
+                        <i class="fas fa-users fa-3x"></i>
+                        <h4 class="font-weight-bold counter" data-target="2000"></h4>
+                        <p class="fw-bold">Happy Clients</p>
+                     </div>
+                     <div class="col-sm-4 mt-2">
+                        <i class="fas fa-tasks fa-3x"></i>
+                        <h4 class="font-weight-bold counter" data-target="500"></h4>
+                        <p class="fw-bold">On Going Project</p>
+                     </div>
+                 </div>
+                 
+                </div>
+              </div>
+        </div>
+    </main>
+   
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+<script>
+   let counters=document.querySelectorAll('.counter'); 
+   counters.forEach((counts)=>{
+    //console.log(counts);
+    counts.innerHTML=0;
+    let updateCounter=()=>{
+        let targetCounter=+counts.getAttribute('data-target');
+        //console.log(targetCounter);
+
+        let startingCount=Number(counts.innerHTML);
+        let incr=targetCounter/100;
+        if(startingCount < targetCounter){
+            counts.innerHTML=`${Math.round(startingCount +incr)}`;
+            setTimeout(updateCounter,20)
+        }else{
+            counts.innerHTML=targetCounter;
+        }
+    }
+    updateCounter();
+   })
+  
+</script>
+  </body>
+</html> 

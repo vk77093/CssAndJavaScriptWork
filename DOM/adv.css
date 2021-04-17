@@ -1,0 +1,42 @@
+*{
+    margin-top: 15px;
+    
+}
+body{
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
+.mainSec{
+    text-align: center;
+}
+#outer{
+    height: 200px;
+    width: 200px;
+   text-align: center;
+    background-color: blue;
+    border: red solid 2px;
+}
+#inner{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    background-color: blue;
+    border: greenyellow solid 2px;
+}
+#outer2{
+    height: 200px;
+    width: 200px;
+   text-align: center;
+    background-color: blue;
+    border: red solid 2px;
+}
+#inner2{
+    height: 100px;
+    width: 100px;
+    padding: 2px;
+    text-align: center;
+    background-color: blue;
+    border: greenyellow solid 2px;
+}

@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Form Validation</title>
+    </head>
+    <body>
+<div class="margin:10px">
+    <form id="myForm" action="some.php" method="post" onsubmit="return mysubmit()">
+        <label for="name">Enter the Name</label>
+        <input type="text" name="name">
+        <label for="numberText">Enter the Mobile Number</label>
+        <input type="number" name="numberText">
+        <button type="submit">Submit the form</button>
+    </form>
+    <br>
+    <p id="showTime"></p>
+    <h1 id="demo"></h1>
+</div>
+    </body>
+    <script>
+        let mysubmit=()=>{
+            let nameData=document.forms['myForm']['name'].value;
+            let numberText=document.forms['myForm']['numberText'].value;
+            let numberTextData=numberText.length;
+            if(nameData == ""){
+                alert("Please enter the name");
+                return false;
+            }else if(numberTextData >10){
+                alert("Number cannot be greater than 10");
+                return false;
+            }
+            else if(numberTextData <10){
+                alert("Number cannot be less than 10");
+                return false;
+            }
+            // switch (numberTextData) {
+            //     case numberTextData == "":
+            //     alert("Please enter the name"); 
+            //     return false;
+            //         break;
+            // case numberTextData >10:
+            // alert("Number cannot be greater than 10");
+            // return false;
+            // break;
+            // case numberTextData<10:
+            // alert("Number cannot be less than 10");
+            // return false;
+            //     default:
+            //         break;
+            // }
+        }
+     
+        let showTime=()=>{
+            let d=new Date();
+            
+           let showTest= document.getElementById('showTime');
+           showTest.innerHTML=`the hour minute and second is ${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()}`;
+//         let d = new Date();
+//   document.getElementById("showTime").innerHTML=
+//   d.getHours() + ":" +
+//   d.getMinutes() + ":" +
+//   d.getSeconds();
+        }
+           setInterval(showTime,1000);  
+
+        setInterval(myFunction, 1000);
+
+function myFunction() {
+  let d = new Date();
+  document.getElementById("demo").innerHTML=
+  d.getHours() + ":" +
+  d.getMinutes() + ":" +
+  d.getSeconds();
+}
+    </script>
+</html>

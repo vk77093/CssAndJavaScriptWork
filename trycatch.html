@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Try Catch Check</title>
+        <style>
+            *{
+                margin:10px;
+                padding: 5px;
+            }
+            #scrollChnageText{
+                position: fixed;
+                font-size: 50px;
+            }
+        </style>
+    </head>
+<body>
+<label for="try">Enter the Number (b/w) 5 to 10</label>
+<input type="number" id="tryId">
+<button type="button" onclick="mycheck()">Test Input</button>
+<p id="showTry"></p>
+
+<h4>getting the elements through javascript objects</h4>
+<p id="javaObject"></p>
+<button type="button" onclick="objectsGet()">Click the get the name</button>
+<br>
+<p id="mycarDetails"></p>
+<p id="onloadText">I will going to Change while Load</p>
+<h4 id="scrollChnageText">Change on scroll</h4>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur sunt optio quod nisi quis magni a illum reprehenderit, deserunt et iusto omnis hic alias provident odio sed quibusdam nemo doloremque!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolore iure quo cupiditate nam, ea hic vitae voluptas suscipit laudantium necessitatibus consectetur aspernatur, fugit dolorem eum, delectus consequuntur eos! Id.</p>
+
+</body>
+<script>
+ function mycheck() {
+    let num=document.getElementById('tryId').value;
+let showTry=document.getElementById('showTry');
+ showTry.innerHTML="";
+ let numberSize=num.length;
+ console.log(numberSize);
+try {
+    if(numberSize < 10) throw "Number is too low";
+    if(num == "")   throw "Number can be blank";
+    if(numberSize > 10) throw "Number is too high";
+} catch (error) {
+    showTry.innerHTML=error;
+}
+ }
+
+ // objects 
+
+ let persons={
+     name:'vijay',
+     age:27,
+     address:'some address',
+     fulldetails:function(){
+        return this.address +" "+ this.name;
+       
+     }
+ }
+ let dataget=document.getElementById('javaObject');
+
+ function objectsGet(){
+    dataget.innerHTML=persons.fulldetails(); 
+    
+ }
+ // by using class
+
+ class car{
+     constructor (name,year){
+         this.name=name;
+         this.year=year;
+     }
+    age(){
+        let dateGet=new Date();
+        return dateGet.getFullYear()- this.year;
+    }
+ }
+ let carData=document.getElementById('mycarDetails');
+  let mycar=new car("vivo0",2014);
+//   let carData=document.getElementById('mycarDetails').innerHTML=
+//   "my car is " + mycar.age();
+  carData.innerHTML=`my car is ${mycar.name}  and its age is ${mycar.age()}`;
+ 
+let myFun=()=>{
+    window.onload=document.getElementById('onloadText').innerHTML="Hello i am loaded";
+}
+setInterval(myFun,5000);
+    
+
+window.onscroll=function my(){
+    if(document.body.scrollTop >100 || document.documentElement.scrollTop > 100){
+    document.getElementById('scrollChnageText').innerHTML="Hello I am changed on Scroll Burra";
+}
+else{
+    document.getElementById('scrollChnageText').innerHTML="back to normal scroll";
+}
+}
+
+
+</script>
+</html>

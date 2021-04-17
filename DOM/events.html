@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JAVA SCRIPT Events</title>
+        <link rel="stylesheet" href="first.css">  
+    </head>
+    <body>
+        <div class="events">
+            <button class="buttonType" onclick="alert('Hello i am alert box')">Simple Indline Events</button>
+        </div>
+        <div class="events">
+            <button class="buttonType" onclick="clickIt()">By Calling A function</button>
+        </div>
+        <div class="events">
+            <button class="buttonType" id="thirdWay">Inline Events</button>
+        </div>
+        <div class="events">
+            <button class="buttonType" id="fourthWay">Event Listeners</button>
+        </div>
+<!-- The Events Object Data-->
+        <div class="events">
+            <button class="buttonType" id="eventsObjects">Event Listeners Object</button>
+        </div>
+
+        <!--- The Mouse Events-->
+
+        <div class="mouseEvents">
+            <p class="mytext" onmousedown="mouseDown()" onmouseup="mouseup()">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut temporibus tenetur doloribus, sed itaque animi suscipit facere eligendi dolorum est. Deleniti, a excepturi consectetur cumque commodi eligendi laudantium ducimus odio!</p>
+        </div>
+
+        <div class="mouseEvents">
+            <div class="box"></div>
+        </div>
+
+        <!--keywords Events-->
+        <div class="keywordsEvents">
+            <div class="boxes">
+               <input type="text" onkeypress="keyPress()"
+               onkeyup="keyUp()" onkeydown="keyDown()">
+               <p id="keytext"></p>
+            </div>
+        </div>
+
+        <!--Input Events-->
+        <div class="my-form">
+            <label>Type your name</label>
+            <input type="text" name="" id="forminput">
+            <div class="selectBox">
+                <label>Choose the data</label>
+                <select id="selectID" name="" onchange="selectChange()">
+                    <option value="vijay">Vijay</option>
+                    <option value="ajay">Ajay</option>
+                    <option value="ajit">Ajit</option>
+                </select>
+                <p id="result"></p>
+            </div>
+            
+        </div>
+        <!-- Time Based Events in JS-->
+        <hr>
+        <p>Time Based events</p>
+        <div class="timeBased">
+            <p id="timeText">DO you Want to know my name </p>
+            <p id="resultTime"></p>
+            <button id="btn" class="buttonType">Click Me</button>
+        </div>
+
+        <div class="timeBased">
+            <p id="timeText1">Stop The Time and Resume the Time</p>
+            <p id="resultTime1"></p>
+            <span><button id="btn1" class="buttonType">Start</button>
+                <button id="btn2" class="buttonType">Stop</button>
+            </span>
+
+        </div>
+        <script src="firstbom.js"></script>
+    </body>
+
+</html>
