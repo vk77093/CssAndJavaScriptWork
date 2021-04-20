@@ -71,8 +71,16 @@ const menu = [
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: "My Special Sneak peas",
+    category: "dinner",
+    price: 16.99,
+    img: "./images/item-10.jpeg",
+    desc: `Some Dinner idea sneaks the lorem test the dncd bcdiuh hcihe cioech uhcoiehc iocje c iehcoi  dcoie choiceboc eoicboehcoi hcioeoic`,
+  },
 ];
-
+ //first Phase
 // let sectionCenter=document.querySelector('.section-center');
 // window.addEventListener("DOMContentLoaded",()=>{
 //   //console.log('you loaded');
@@ -97,9 +105,67 @@ const menu = [
 //   sectionCenter.innerHTML=dataShow;
 // })
 
-let sectionCenter=document.querySelector('.section-center');
-fliterBtns=document.querySelectorAll('.filter-btn');
+//2nd Phase
+// let sectionCenter=document.querySelector('.section-center');
+// fliterBtns=document.querySelectorAll('.filter-btn');
 
+// const showmenuItems=(menuItems)=>{
+//   let dataShow=menuItems.map((item)=>{
+//     //console.log(item)
+//     return `<article class="menu-item">
+//     <img src=${item.img} alt=${item.title} class="photo" />
+//     <div class="item-info">
+//       <header>
+//         <h4>${item.title}</h4>
+//         <h4 class="price">$${item.price}</h4>
+//       </header>
+//       <p class="item-text">
+//         ${item.desc}
+//       </p>
+//     </div>
+//   </article>`;
+//   })
+//   //console.log(dataShow);
+//   dataShow=dataShow.join("");
+//   //console.log(dataShow);
+//   sectionCenter.innerHTML=dataShow;
+// }
+// window.addEventListener("DOMContentLoaded",()=>{
+//   //console.log('you loaded');
+//   showmenuItems(menu);
+// })
+// fliterBtns.forEach((currentbtns)=>{
+//   currentbtns.addEventListener('click',(e)=>{
+//     let category=e.currentTarget.dataset.id;
+//     //console.log(category);
+//     let menuCategory=menu.filter((currentMenu)=>{
+//       //console.log(currentMenu.category);
+//       if(currentMenu.category === category){
+//         return currentMenu;
+//       }
+//     })
+//     //console.log(menuCategory);
+//     if(category ==='all'){
+//       showmenuItems(menu);
+//     }else{
+//       showmenuItems(menuCategory)
+//     }
+//   })
+    
+// })
+
+//3rd phase of
+let sectionCenter=document.querySelector('.section-center');
+// fliterBtns=document.querySelectorAll('.filter-btn');
+btnContainer=document.querySelector('.btn-container');
+
+
+window.addEventListener("DOMContentLoaded",()=>{
+  //console.log('you loaded');
+  showmenuItems(menu);
+  showmenuButton();
+ 
+})
 const showmenuItems=(menuItems)=>{
   let dataShow=menuItems.map((item)=>{
     //console.log(item)
@@ -121,29 +187,49 @@ const showmenuItems=(menuItems)=>{
   //console.log(dataShow);
   sectionCenter.innerHTML=dataShow;
 }
-window.addEventListener("DOMContentLoaded",()=>{
-  //console.log('you loaded');
-  showmenuItems(menu);
-})
-fliterBtns.forEach((currentbtns)=>{
-  currentbtns.addEventListener('click',(e)=>{
-    let category=e.currentTarget.dataset.id;
-    //console.log(category);
-    let menuCategory=menu.filter((currentMenu)=>{
-      //console.log(currentMenu.category);
-      if(currentMenu.category === category){
-        return currentMenu;
-      }
-    })
-    //console.log(menuCategory);
-    if(category ==='all'){
-      showmenuItems(menu);
-    }else{
-      showmenuItems(menuCategory)
+const showmenuButton =()=>{
+ // let buttonCategory =menu.reduce(function(values,items){
+  //   if(!values.includes(items.category)){
+  //     values.push(items.category);
+  //   }
+  // return values;
+  // },['all'])
+  // console.log(buttonCategory);
+  let buttonCategory=menu.reduce((values, items)=>{
+    if(!values.includes(items.category)){
+      values.push(items.category);
     }
-  })
-    
-})
+    return values;
+      },['all'])
+      //console.log(buttonCategory);
+      let dynamicButton=buttonCategory.map((category)=>{
+        return `<button class="filter-btn" type="button"data-id=${category}>${category}</button>`
+      }).join("");
+      //console.log(dynamicButton);
+      btnContainer.innerHTML=dynamicButton;
+      fliterBtns=document.querySelectorAll('.filter-btn');
+      fliterBtns.forEach((currentbtns)=>{
+        currentbtns.addEventListener('click',(e)=>{
+          let category=e.currentTarget.dataset.id;
+          //console.log(category);
+          let menuCategory=menu.filter((currentMenu)=>{
+            //console.log(currentMenu.category);
+            if(currentMenu.category === category){
+              return currentMenu;
+            }
+          })
+          //console.log(menuCategory);
+          if(category ==='all'){
+            showmenuItems(menu);
+          }else{
+            showmenuItems(menuCategory)
+          }
+        })
+          
+      })
+}
+
+
 
 
 
