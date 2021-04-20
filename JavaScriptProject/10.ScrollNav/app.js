@@ -5,9 +5,50 @@
 
 // ********** set date ************
 
+let currentDate=document.querySelector('#currentDate');
+let nextDate=document.querySelector('#nextDate');
+ let dateData=new Date().getFullYear();
+ currentDate.innerHTML=dateData;
+
+ let backdate=dateData+1;
+  let newDate=backdate.toString();
+  //console.log(newDate);
+  nextDate.innerHTML=newDate.slice(2);
+
 // ********** close links ************
+let navbarToggle=document.querySelector('.nav-toggle');
+let linksContainer=document.querySelector('.links-container');
+let links=document.querySelector('.links');
 
+navbarToggle.addEventListener('click',()=>{
+    //linksContainer.classList.toggle('show-links');
+    //upper approch will give issue if we had dynamic navbar values
+
+    let containerHeight=linksContainer.getBoundingClientRect().height;
+    let linksHeight=links.getBoundingClientRect().height;
+    if(containerHeight ===0){
+        linksContainer.style.height=`${linksHeight}px`;
+    }else{
+        linksContainer.style.height=0;
+    }
+})
 // ********** fixed navbar ************
-
+let navbar=document.getElementById('nav');
+let topLinksContainer=document.querySelector('.top-link');
+window.addEventListener('scroll',()=>{
+    let scrollHeight=window.pageYOffset;
+    let navheight=navbar.getBoundingClientRect().height;
+    if(scrollHeight >navheight){
+        navbar.classList.add('fixed-nav');
+    }else{
+        navbar.classList.remove('fixed-nav');
+    }
+    // for showing the scroll top icon
+    if(scrollHeight >500){
+        topLinksContainer.classList.add('show-link');
+    }else{
+        topLinksContainer.classList.remove('show-link');
+    }
+})
 // ********** smooth scroll ************
 // select links
