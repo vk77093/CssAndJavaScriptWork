@@ -52,3 +52,11 @@ window.addEventListener('scroll',()=>{
 })
 // ********** smooth scroll ************
 // select links
+let scrollLinks = document.querySelectorAll('.scroll-link');
+scrollLinks.forEach((indLinks)=>{
+indLinks.addEventListener('click',(e)=>{
+    e.preventDefault();
+    let getId=e.currentTarget.getAttribute('href');
+    console.log(getId);
+})
+})
