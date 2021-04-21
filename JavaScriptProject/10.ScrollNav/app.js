@@ -56,7 +56,34 @@ let scrollLinks = document.querySelectorAll('.scroll-link');
 scrollLinks.forEach((indLinks)=>{
 indLinks.addEventListener('click',(e)=>{
     e.preventDefault();
-    let getId=e.currentTarget.getAttribute('href');
-    console.log(getId);
+    //here we used slice method from remove the #value
+    let getId=e.currentTarget.getAttribute('href').slice(1);
+    //console.log(getId);
+    //now we can able to select that elements
+    let element=document.getElementById(getId);
+    //let position=element.offsetTop;
+   // console.log(position);
+
+   //Getting the height of the elements
+   let navheightNew=navbar.getBoundingClientRect().height;
+   let containerHeight=linksContainer.getBoundingClientRect().height;
+   let fixedNavHeight=navbar.classList.contains('fixed-nav');
+   let position=element.offsetTop-navheightNew;
+  // console.log(position);
+  if(!fixedNavHeight){
+      position=position-navheightNew;
+  }
+  if(navheightNew>82){
+      position=position+containerHeight;
+  }
+   
+   // getting the scrool values
+  window.scroll({
+        left:0,top:position,
+    });
+   
+    //closing the links when user clicked its
+    linksContainer.style.height=0;
+
 })
 })
