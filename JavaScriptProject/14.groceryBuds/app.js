@@ -13,7 +13,6 @@ let editId="";
 
 // ****** FUNCTIONS **********
 
-
 const addItem=(e)=>{
     e.preventDefault();
     let groceryValue=grocery.value;
@@ -115,18 +114,30 @@ const addToLocalStorage =(id,value)=>{
     items.push(addedItems);
     localStorage.setItem('lists',JSON.stringify(items));
 }
-const removeFromLocalStorage =(id)=>{
-   // console.log('value removed from local storage');
-   let items=getLocalStorage();
-  items=items.filter(function(item){
-      if(item.id !==id){
-        return item;
-      }
+// const removeFromLocalStorage =(id)=>{
+   
+//    let items=getLocalStorage();
+//   items=items.filter(function(item){
+//       if(item.id !==id){
+//         return item;
+//       }
       
-    }); 
-  // console.log(item)
-   localStorage.setItem('lists',JSON.stringify(items));
-}
+//     }); 
+//   // console.log(item)
+//    localStorage.setItem('lists',JSON.stringify(items));
+// }
+function removeFromLocalStorage(id) {
+    let items = getLocalStorage();
+  
+    items = items.filter(function (item) {
+      if (item.id !== id) {
+        return items;
+      }
+    });
+  
+    localStorage.setItem("list", JSON.stringify(items));
+  }
+
 const editLocalStorage =(id,value)=>{
     //console.log('value edited to local storage');
     let items=getLocalStorage();
@@ -135,7 +146,7 @@ const editLocalStorage =(id,value)=>{
             item.value=value;
         }
         return item;
-    })
+    });
     localStorage.setItem('lists',JSON.stringify(items));
 }
 
@@ -160,7 +171,7 @@ const deleteItem =(e)=>{
     //console.log('i will delete');
    let newElement= e.currentTarget.parentElement.parentElement;
    let idDel= newElement.dataset.dynamicId;
-   groceryList.removeChild(newElement);
+groceryList.removeChild(newElement);
 if(groceryList.children.length ===0){
     groceryContainer.classList.remove('show-container');
 }
@@ -194,6 +205,7 @@ const settingTheItem=()=>{
     if(items.length >0){
 items.forEach(function(item){
     createClassListItem(item.id,item.value);
+    //createListItem(item.id, item.value);
 })
 groceryContainer.classList.add('show-container');
 
