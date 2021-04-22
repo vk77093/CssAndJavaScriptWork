@@ -134,6 +134,7 @@ function removeFromLocalStorage(id) {
         return items;
       }
     });
+     
   
     localStorage.setItem("list", JSON.stringify(items));
   }
@@ -147,6 +148,7 @@ const editLocalStorage =(id,value)=>{
         }
         return item;
     });
+   
     localStorage.setItem('lists',JSON.stringify(items));
 }
 
