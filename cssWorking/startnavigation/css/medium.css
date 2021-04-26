@@ -1,0 +1,21 @@
+/*1em=16px so 35*16=560px */
+@media only screen and (min-width:35em){
+    nav{
+        overflow: hidden;
+    }
+nav button{
+    display:none;
+}
+nav ul.hide{
+    display: block;
+}
+nav ul li{
+    float:left;
+}
+nav ul{margin-left: 2%;}
+}
+nav ul li a{
+    border:none;
+    background-color:rgba(0, 0, 0, 0.2);
+    padding:0.8rem 1rem;
+}
