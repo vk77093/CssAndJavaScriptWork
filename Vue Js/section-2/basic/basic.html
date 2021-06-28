@@ -21,6 +21,9 @@ border-radius: 5px;
 text-shadow: antiquewhite;
 border: solid 1px green;
 }
+p span{
+    color:green;
+}
   </style>
 </head>
 <body>
@@ -30,9 +33,10 @@ border: solid 1px green;
            <h2>Finish the Course Goal</h2>
            <p>{{courseGoal}}</p>
            <p>{{Math.random(10)}}</p>
-           
+           <p>Calling the Data Property nside of the Method <span>"{{checkGoalStatus()}}"</span></p>
            <p>lets talk abou the <a v-bind:href="links">Vue</a></p>
            <p>{{checkGoalStatus()}}</p>
+           <p v-html="showHtml"></p>
        </section>
    </div> 
 </body>
