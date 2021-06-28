@@ -215,3 +215,8 @@ let flat=arr4.reduce((acc,curEle)=>
 acc.concat(curEle)
 )
 console.log(flat);
+
+let my=[[1,3,4],6,8,9,10];
+my.forEach((element,index,a)=>{
+  console.log(element);
+})

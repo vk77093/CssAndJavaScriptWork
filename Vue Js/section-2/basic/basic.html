@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <style>
+.main{
+   
+    text-align: center;
+}
+#user-goal h2{
+border-radius: 5px;
+text-shadow: antiquewhite;
+border: solid 1px green;
+}
+#user-goal p{
+border-radius: 5px;
+text-shadow: antiquewhite;
+border: solid 1px green;
+}
+  </style>
+</head>
+<body>
+   <div class="main">
+       <h1>Vue Js Course Goal</h1>
+       <section id="user-goal">
+           <h2>Finish the Course Goal</h2>
+           <p>{{courseGoal}}</p>
+           <p>{{Math.random(10)}}</p>
+           
+           <p>lets talk abou the <a v-bind:href="links">Vue</a></p>
+           <p>{{checkGoalStatus()}}</p>
+       </section>
+   </div> 
+</body>
+<script src="https://unpkg.com/vue@next"></script>  
+<script src='basic.js'></script>
+</html>
