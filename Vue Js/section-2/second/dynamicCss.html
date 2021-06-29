@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Jost', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 3rem;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #4fc08d;
+  color: white;
+  text-align: center;
+}
+
+#styling {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 3rem;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.demo {
+  width: calc(100% - 32px);
+  height: 100px;
+  margin: 16px;
+  border: 2px dashed #ccc;
+}
+.active{
+    border-color: #4fc08d;
+    background-color:red;
+}
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="dynamic.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <section id="styling">
+      <!-- <div @click="box('A')" class="demo"  :style="{'border-color' :boxASelected ? 'red' :'green'}"></div>
+      <div @click="box('B')" class="demo" :style="{'border-color' :boxBSelected ? 'red' :'green'}"></div>
+      <div class="demo"></div> -->
+      <!-- <div @click="box('A')" :class="boxASelected ? 'demo active' : 'demo'"></div>
+      <div @click="box('B')" :class="{demo:true, active:boxBSelected}" ></div>
+      <div class="demo"></div> -->
+
+      <!-- <div @click="box('A')" class="demo" :class="{active:boxASelected}"></div> -->
+      <div @click="box('A')" class="demo" :class="boxAClass"></div>
+      <div @click="box('B')" class="demo" :class="{active:boxBSelected}"></div> 
+      <div @click="box('C')" class="demo" :class="{active:boxCSelected}"></div>
+    </section>
+  </body>
+</html>
