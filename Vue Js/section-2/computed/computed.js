@@ -50,4 +50,4 @@ if(this.counter>50){
         // }
     },
 })
-computed.mount('#computed')
+computed.mount('#computed');
