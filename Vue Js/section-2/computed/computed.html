@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed Property</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="computed">
+      <h2>Computed Property</h2> 
+      <br>
+        <span>
+            <button v-on:click="increment(5)">Increment</button>
+            <button v-on:click="deccrement(5)">Decrease</button>
+        </span>
+        <p>Result ::{{counter}}</p> 
+        <input type="text" name="" v-model="name">
+        <input type="text" name="" v-model="lastname">
+        <p>User Name ::{{name}}</p>
+        <p>Full Name is {{fullname}}</p>
+    </section>
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src='computed.js'></script>
+</html>
