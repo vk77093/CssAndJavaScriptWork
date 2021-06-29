@@ -74,7 +74,7 @@ button:active {
   
 </head>
 <body>
-    <section id='mainSection'>
+    <!-- <section id='mainSection'>
         <h2>Vue Event bubbling</h2>
         <br>
         <span>
@@ -83,7 +83,49 @@ button:active {
         </span>
         <p>Result ::{{counter}}</p>
         <p>{{name}} {{counter}}</p>
+    </section> -->
+
+    <section id='mainSection'>
+        <h2>Vue Event bubbling</h2>
+        <br>
+        <span>
+            <button v-on:click="increment(5)">Increment</button>
+            <button v-on:click="deccrement(5)">Decrease</button>
+        </span>
+        <p>Result ::{{counter}}</p>
+        <p>{{name}} {{counter}}</p>
+        <input type="text" name="" v-on:input="setName">
+        <p>User Name ::{{name}}</p>
+        <h2>Adding the Event modifier</h2>
+        <!-- If we submit the form we will loss the content-->
+        <!--first method-->
+        <form v-on:submit="preventSubmit">
+          
+          <input type="text" name="">
+          <button>Submit</button>
+         
+        </form>
+        <h2>Vue JS Prevnet Default</h2>
+        <form v-on:submit.prevent="VuepreventSubmit">
+          
+          <input type="text" name="">
+          <button>Submit</button>
+        </form>
+        
     </section>
+  <br>
+  <section id="keywords">
+    <h2>Checking the User Event with Special key</h2>
+    <span>
+      <h4>Here we define right click on increment the and left on deccrement</h4>
+      <button v-on:click.right="increment">Increment</button>
+      <button v-on:click.left="deccrement">Decrease</button>
+  </span>
+  <p>Result ::{{counter}}</p>
+  <input type="text" v-on:input="getName" v-on:keyup.enter="finalName">
+  <p>The User Enetr name is {{nameGet}}</p>
+  <p>The final name of user is {{finalNameGet}}</p>
+  </section>
     <script src="https://unpkg.com/vue@next"></script>
     <script src='counter.js'></script>
 </body>
