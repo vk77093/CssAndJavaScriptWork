@@ -23,7 +23,8 @@
       <!---we can also use V-show-->
       <p v-if="goals.length ===0">No goals have been added yet - please start adding some!</p>
       <ul v-else>
-        <li v-for="vijay in goals">{{vijay}}</li>
+        <!-- <li v-for="vijay in goals">{{vijay}}</li> -->
+        <li v-for="{vijay,index} in goals">{{vijay}} --{{index}}</li>
       </ul>
     </section>
   </body>
