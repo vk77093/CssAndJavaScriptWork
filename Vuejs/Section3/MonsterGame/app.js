@@ -97,7 +97,23 @@ if(value <=0 && this.playerHealth <=0){
     
 
 })
-monsterProject.mount('#game');
+// monsterProject.mount('#game');
+// <li v-for="logMessage in logMessages">
+//             <span
+//               :class="{'log--player': logMessage.actionBy === 'player', 'log--monster': logMessage.actionBy === 'monster'}"
+//               >{{ logMessage.actionBy === 'player' ? 'Player' : 'Monster'
+//               }}</span
+//             >
+//             <span v-if="logMessage.actionType === 'heal'">
+//               heals himself for
+//               <span class="log--heal">{{ logMessage.actionValue }}</span></span
+//             >
+//             <span v-else>
+//               attacks and deals
+//               <span class="log--damage">{{ logMessage.actionValue }}</span>
+//             </span>
+//           </li>
+
 
 // function getRandomValue(min, max) {
 //     return Math.floor(Math.random() * (max - min)) + min;
