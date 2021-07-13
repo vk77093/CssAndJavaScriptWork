@@ -1,7 +1,5 @@
 <template>
-<header>HelloWorld</header>
 <ul>
-
   <learning-resource v-for="res in resource" :key="res.id"
    :title="res.title"
    :description="res.description"
