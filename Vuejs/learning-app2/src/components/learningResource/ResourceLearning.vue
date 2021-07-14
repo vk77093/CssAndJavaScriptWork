@@ -3,13 +3,13 @@
     <base-card>
         <header>
             <h3>{{title}}</h3>
-            <base-button mode="flat">Delete</base-button>
+            <base-button mode="flat" @click="deleteResource(id)">Delete</base-button>
         </header>
     
     <p>{{description}}</p>
     <nav>
         <!---Its V:bind property shorthand --->
-        <a :href="links">View ResourceLearning</a>
+        <a :href="links">View Resource</a>
     </nav>
     </base-card>
 </li>
@@ -17,7 +17,8 @@
 <script>
  //import baseCard from './components/UI/BaseCard.vue';
 export default {
-    props:['title', 'description','links'],
+  inject:['deleteResource'],
+    props:['id','title', 'description','links'],
     // components:{
     //   baseCard,
     // }
