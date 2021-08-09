@@ -16,19 +16,60 @@
 import UserItem from '../users/UserItem.vue';
 
 export default {
+  inject:['teams','users'],
   components: {
     UserItem
   },
   data() {
     return {
-      teamName: 'Test',
-      members: [
-        { id: 'u1', fullName: 'Max Schwarz', role: 'Engineer' },
-        { id: 'u2', fullName: 'Max Schwarz', role: 'Engineer' },
-      ],
+      // teamName: 'Test',
+      // members: [
+      //   { id: 'u1', fullName: 'Max Schwarz', role: 'Engineer' },
+      //   { id: 'u2', fullName: 'Max Schwarz', role: 'Engineer' },
+      // ],
+      teamName:'',
+      members:'',
     };
   },
-};
+  methods: {
+    loadTeamMembers(route){
+const teamId = route.params.teamId;
+    const selectedTeams= this.teams.find(team=>team.id == teamId);
+    const members=selectedTeams.members;
+    const selectedMembers=[];
+    for(const member of members){
+      const selectedUsers=this.users.find(user=>user.id ===member);
+      selectedMembers.push(selectedUsers);
+    }
+    this.members=selectedMembers;
+    this.teamName=selectedTeams.name;
+
+  }
+    },
+     created(){
+    //const teamId =this.$route.path //it will simple use teams/id
+  //   const teamId = this.$route.params.teamId;
+  //   const selectedTeams= this.teams.find(team=>team.id == teamId);
+  //   const members=selectedTeams.members;
+  //   const selectedMembers=[];
+  //   for(const member of members){
+  //     const selectedUsers=this.users.find(user=>user.id ===member);
+  //     selectedMembers.push(selectedUsers);
+  //   }
+  //   this.members=selectedMembers;
+  //   this.teamName=selectedTeams.name;
+this.loadTeamMembers(this.$route);
+   },
+    watch:{
+      $route(newRoute){
+        this.loadTeamMembers(newRoute)
+      }
+    },
+   
+  };
+  
+  
+
 </script>
 
 <style scoped>
